@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>WebRTC Canvas Drawing</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans&subset=cyrillic">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="requestModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h2>Connection request received</h2>
+            </div>
+            <div class="modal-body">
+              <p>A peer wants to establish a connection with you!</p>
+              <div class="connection-btn">
+                <button id="acceptRequestButton">Accept request</button>
+                <button id="declineRequestButton">Decline request</button>
+              </div>
+            </div>
+          </div>
+      
+      </div>
+    <div class="header-container">
+        <h1>WebRTC Canvas Drawing</h1>
+        <img src="https://cdn.statically.io/gh/mite1200/statically-cdn/564c5358/webrtc.svg" alt="WebRTC logo" class="webrtc-logo" />
+    </div>
+    <div class="description">
+        <p>Code example for demonstrating WebRTC's peer-to-peer-connection capabilities.<br>
+           Open this site in two browser windows/tabs, connect both peers and start drawing synchronously! 👨‍🎨🎨</p>
+    </div>
+
+    <div class="control-panel">
+        <div class="connection-btn">
+            <button id="connectButton" disabled>Connect</button>
+            <button id="disconnectButton" disabled>Disconnect</button>
+            <div id="loader"></div>
+            <a id="statusText">Status: disconnected - searching for peer ...</a>
+        </div>
+        <div class="drawing-btn">
+            <fieldset>
+                <legend>Select tool:</legend>
+                <div>
+                    <input id="toolPen" type="radio" name="tool" value="true" checked>
+                    <label for="toolPen">Pen</label>
+                    </div>
+                <div>
+                    <input id="toolEraser" type="radio" name="tool" value="true">
+                    <label for="toolEraser">Eraser</label>
+                </div>
+            </fieldset>
+            <div>
+                <label for="colorPicker">Choose Color</label>
+                <input id="colorPicker" type="color" name="color" value="#e66465">
+            </div>
+            <div>
+                <label for="thicknessSlider">Choose thickness</label>
+                <input id="thicknessSlider" type="range" min="1" max="50" step="1" value="5"/>
+            </div>
+        </div>
+    </div>
+    <canvas id="canvas">
+        <strong>Your browser does not support canvas</strong>
+    </canvas>
+    <footer>
+        <p>built with ♡ in Hagenberg by</p>
+        <p>Trenker Michael & Schranz Tobias</p>
+    </footer>
+    <script type="text/javascript" src="draw.js"></script>
+    <script type="text/javascript" src="webrtc.js"></script>
+</body>
+</html>
